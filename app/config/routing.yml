@@ -1,0 +1,7 @@
+odiseo_elecco:
+    resource: "@OdiseoEleccoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
