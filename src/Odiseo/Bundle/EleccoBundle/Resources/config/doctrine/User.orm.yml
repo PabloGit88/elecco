@@ -1,0 +1,32 @@
+Odiseo\Bundle\EleccoBundle\Entity\User:
+    type: entity
+    table: user
+    fields:
+        dni:
+            column: dni
+            type: string
+            length: 255
+            nullable: true
+        name:
+            column: name
+            type: string
+            length: 255
+            nullable: true
+        lastname:
+            column: lastname
+            type: string
+            length: 255
+            nullable: true
+        phone:
+            column: phone
+            type: string
+            length: 255
+            nullable: true
+    attributeOverride:
+      emailCanonical:
+        unique: false
+        name: emailCanonical
+        column: email_canonical
+        length: 255
+        nullable: false
+        type: string

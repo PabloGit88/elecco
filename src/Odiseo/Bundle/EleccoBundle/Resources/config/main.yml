@@ -1,0 +1,7 @@
+odiseo_elecco_frontend:
+    resource: "@OdiseoEleccoBundle/Resources/config/routing/frontend/main.yml"
+    prefix:   /
+    
+odiseo_elecco_backend:
+    resource: "@OdiseoEleccoBundle/Resources/config/routing/backend/main.yml"
+    prefix:   /admin

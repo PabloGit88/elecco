@@ -1,4 +1,13 @@
 services:
-#    odiseo_elecco.example:
-#        class: Odiseo\Bundle\EleccoBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    odiseo_branca_rally.media_converter:
+        class: Odiseo\Bundle\BrancaRallyBundle\Converter\MediaConverter
+        arguments: [@service_container]
+
+    app.services.mail:
+        class: Odiseo\Bundle\BrancaRallyBundle\Services\MailService
+        arguments: ["@service_container", %email_from% , %email_subject% , %email_name%]
+
+    brancarally.form.type.user:
+        class: Odiseo\Bundle\BrancaRallyBundle\Form\Type\UserType
+        tags:
+            - { name: form.type, alias: odiseo_brancarally_user }

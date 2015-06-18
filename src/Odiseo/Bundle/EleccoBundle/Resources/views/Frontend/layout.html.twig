@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="keywords" content="elecco">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		        
+		<meta property="og:title" content="{% block og_title %}Elecco{% endblock %}" />
+    	<meta property="og:description" content="{% block og_description %}Elecco{% endblock %}" />
+    	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="Shortcut Icon" type="image/x-icon" href="#">
+
+        <title>{% block title %}Elecco{% endblock %}</title>
+        
+	    <!-- stylesheets -->
+		{# stylesheets... #}
+		{% block stylesheets %}
+		{% stylesheets output='css/frontend.min.css' filter='cssrewrite'
+			'//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
+			'bundles/odiseoelecco/css/main.css'
+
+		%}
+		<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+		{% endstylesheets %}
+		{% endblock %}
+    </head>
+    <body>
+    	{% block header %}
+    	{% endblock %}
+
+		{% block content %}
+		{% endblock %}
+		<footer>
+		</footer>
+		
+		<!-- javascript -->
+		{# javascripts... #}
+		{% block javascripts %}
+		{% javascripts output='js/frontend.min.js'
+           'bundles/odiseoelecco/js/vendor/jquery.1.11.2.min.js'
+           'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js'
+		   'bundles/odiseoelecco/js/main.js'	
+		%}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+		{% endblock %}
+        <script>
+		</script>
+    </body>
+</html>
