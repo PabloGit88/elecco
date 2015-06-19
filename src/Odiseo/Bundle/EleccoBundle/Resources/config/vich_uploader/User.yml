@@ -1,0 +1,4 @@
+Odiseo\Bundle\EleccoBundle\Entity\User:
+    videoFile:
+        mapping:           user_videos
+        filename_property: video_name

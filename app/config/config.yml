@@ -82,3 +82,27 @@ sylius_resource:
             classes:
                 model: Odiseo\Bundle\EleccoBundle\Entity\User
                 repository: Odiseo\Bundle\EleccoBundle\Repository\UserRepository
+
+knp_gaufrette:
+    stream_wrapper: ~
+
+    adapters:
+        user_adapter:
+            local:
+                directory: %kernel.root_dir%/../web/media/video
+                create:    true
+    filesystems:
+        user_video_fs:
+            adapter:    user_adapter
+
+vich_uploader:
+   db_driver: orm # or mongodb or propel or phpcr
+   storage:   gaufrette
+
+   mappings:
+        user_videos:
+            uri_prefix:         /video
+            upload_destination: user_video_fs
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true

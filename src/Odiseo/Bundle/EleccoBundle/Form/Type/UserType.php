@@ -12,27 +12,51 @@ class UserType extends AbstractType
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
         $builder
-        ->add('name', 'text', array(
+        ->add('fullname', 'text', array(
         		'required' => true,
-        		'label'    => 'Nombre'
+        		'label'    => 'Nombre',
+		        'attr' => array(
+		             'placeholder' => 'Nombre',
+		        ),
         ))
-        ->add('lastname', 'text', array(
+        ->add('passport', 'text', array(
         		'required' => true,
-        		'label'    => 'Apellido'
+        		'label'    => 'Passport #',
+		        'attr' => array(
+		             'placeholder' => 'Passport #',
+		        ),
         ))
-        ->add('phone', 'text', array(
+        ->add('birthdate', 'date', array(
         		'required' => true,
-        		'label'    => 'Telefono'
-        ))
-        ->add('dni', 'text', array(
-        		'required' => true,
-        		'label'    => 'Dni'
+        		'label'    => 'Birthdate',
+		        'attr' => array(
+		             'placeholder' => 'Birthdate',
+		        ),
         ))
         ->add('email', 'email', array(
         		'required' => true,
-        		'label'    => 'Email'
+        		'label'    => 'Email',
+		        'attr' => array(
+		             'placeholder' => 'Email',
+		        ),
         ))
-       	->add('Cargar', 'submit')
+        ->add('country', 'choice', array('choices' => array(
+				'Puerto Rico' => 'Puerto Rico',
+				),
+  				'empty_data'  => null,
+        		'required' => true,
+        		'empty_value' => '    ',
+        		'label'    => 'Country',
+		        'attr' => array(
+		             'placeholder' => 'Country',
+		        ),
+        ))
+        ->add('videoFile', 'file', array(
+        		'required' => true,
+        		'label'    => 'Update Your Video'
+        ))
+   		->add('Pay', 'submit')
+       	->add('Submit', 'submit')
 		;
 	}
 	
@@ -45,6 +69,6 @@ class UserType extends AbstractType
 	}
 	public function getName()
 	{
-		return 'odiseo_brancarally_user';
+		return 'odiseo_elecco_user';
 	}
 }

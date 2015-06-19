@@ -11,15 +11,15 @@ easy_admin:
             class: Odiseo\Bundle\EleccoBundle\Entity\User
             list:
                 title: "Usuarios"
-                fields: ['id', { property: 'fullname', label: 'Nombre y Apellido' }, { property: 'phone', label: 'Telefono' },'dni','email', { property: 'facebookUserId', fieldType: 'facebook_link', label: 'Facebook' }]
+                fields: ['id', { property: 'fullname', label: 'Nombre' }, { property: 'passport', label: 'Passport' },'birthdate','country','isPaid' ]
                 action_edit: "aa"
             new:
                 action_label: "Nuevo usuario"
-                fields: [ { property: 'fullname', label: 'Nombre y Apellido' }, 'dni', { property: 'email', type: 'email' }]
+                fields: [ { property: 'fullname', label: 'Nombre' }, { property: 'passport', label: 'Passport' },'birthdate','country','isPaid' ]
                 title:  "Nuevo usuario"
             edit:
-                fields: [ { property: 'fullname', label: 'Nombre y Apellido' }, { property: 'phone', label: 'Telefono' },'dni',{ property: 'email', type: 'email' }]
+                fields: [ { property: 'fullname', label: 'Nombre' }, { property: 'passport', label: 'Passport' },'birthdate','country','isPaid' ]
                 title:  'Editar usuario'
             show:
                 title: "Mostrando usuario "
-                fields: ['id', { property: 'fullname', label: 'Nombre y Apellido' }, { property: 'phone', label: 'Telefono' }, 'dni','email']
+                fields: ['id', { property: 'fullname', label: 'Nombre' }, { property: 'passport', label: 'Passport' },'birthdate','country','isPaid' ]

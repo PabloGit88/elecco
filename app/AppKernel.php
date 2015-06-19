@@ -2,6 +2,8 @@
 
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Odiseo\Bundle\ProjectBundle\Kernel\Kernel;
+use Knp\Bundle\GaufretteBundle\KnpGaufretteBundle;
+use Vich\UploaderBundle\VichUploaderBundle;
 
 class AppKernel extends Kernel
 {
@@ -11,6 +13,8 @@ class AppKernel extends Kernel
             new Odiseo\Bundle\EleccoBundle\OdiseoEleccoBundle(),
             new Odiseo\Bundle\BackendBundle\OdiseoBackendBundle(),
 			new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
+			new KnpGaufretteBundle(),
+			new VichUploaderBundle()
 		);
 		
 		if (in_array($this->getEnvironment(), array('dev', 'test'))) {

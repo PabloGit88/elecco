@@ -4,10 +4,10 @@ services:
         arguments: [@service_container]
 
     app.services.mail:
-        class: Odiseo\Bundle\BrancaRallyBundle\Services\MailService
+        class: Odiseo\Bundle\EleccoBundle\Services\MailService
         arguments: ["@service_container", %email_from% , %email_subject% , %email_name%]
 
-    brancarally.form.type.user:
-        class: Odiseo\Bundle\BrancaRallyBundle\Form\Type\UserType
+    elecco.form.type.user:
+        class: Odiseo\Bundle\EleccoBundle\Form\Type\UserType
         tags:
-            - { name: form.type, alias: odiseo_brancarally_user }
+            - { name: form.type, alias: odiseo_elecco_user }

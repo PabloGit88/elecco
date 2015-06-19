@@ -1,7 +1,9 @@
 {% extends 'OdiseoEleccoBundle:Frontend:layout.html.twig' %}
 {% block content %}
-Hola
-{{ form_start(form) }}
-{{ form_widget(form) }}
-{{ form_end(form) }}
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
+	{% endfor %}
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
 {% endblock %}

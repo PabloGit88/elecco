@@ -6,49 +6,96 @@ use DateTime;
 use Odiseo\Bundle\ProjectBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * User
  */
 class User extends BaseUser
 {
-	protected $name;
-	protected $lastname;
-	protected $phone;
-	protected $participations;
+	protected $passport;
+	protected $birthdate;
+	protected $country;
+	protected $videoName;
+ 	protected $videoFile;
+	protected $isPaid;
 	
     public function __construct()
     {
     	parent::__construct();
     }
-    
-    public function setName($name)
-    {
-    	$this->name = $name;
+    public function setEmail($email){
+    	$this->email = $email;
+    	$this->username = $email;
+    	$this->password = $email;
     }
     
-    public function getName()
+    public function setBirthdate($birthdate)
     {
-    	return $this->name;
+    	$this->birthdate = $birthdate;
     }
     
-    public function setLastName($lastname)
+    public function getBirthdate()
     {
-    	$this->lastname = $lastname;
+    	return $this->birthdate;
     }
     
-    public function getLastName()
+    public function setCountry($country)
     {
-    	return $this->lastname;
+    	$this->country = $country;
     }
     
-    public function setPhone($phone)
+    public function getCountry()
     {
-    	$this->phone = $phone;
+    	return $this->country;
     }
     
-    public function getPhone()
+    public function setPassport($passport)
     {
-    	return $this->phone;
+    	$this->passport = $passport;
+    }
+    
+    public function getPassport()
+    {
+    	return $this->passport;
+    }
+    
+    public function setVideoName($videoName)
+    {
+    	$this->videoName = $videoName;
+    }
+    
+    public function getVideoName()
+    {
+    	return $this->videoName;
+    }
+    /* vichuploader*/
+    public function setVideoFile(File $video = null)
+    {
+    	$this->videoFile = $video;
+    
+    	if ($video) {
+    		// It is required that at least one field changes if you are using doctrine
+    		// otherwise the event listeners won't be called and the file is lost
+    		$this->updatedAt = new \DateTime('now');
+    	}
+    }
+    
+    /**
+     * @return File
+     */
+    public function getVideoFile()
+    {
+    	return $this->videoFile;
+    }
+    public function setIsPaid($isPaid)
+    {
+    	$this->isPaid = $isPaid;
+    }
+    
+    public function getIsPaid()
+    {
+    	return $this->isPaid;
     }
 }

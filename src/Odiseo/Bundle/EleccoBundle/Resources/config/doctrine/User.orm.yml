@@ -2,31 +2,26 @@ Odiseo\Bundle\EleccoBundle\Entity\User:
     type: entity
     table: user
     fields:
-        dni:
-            column: dni
+        passport:
+            column: passport
             type: string
             length: 255
             nullable: true
-        name:
-            column: name
+        birthdate:
+            column: birthdate
+            type: date
+            length: 255
+            nullable: true
+        videoName:
+            column: videoName
             type: string
             length: 255
             nullable: true
-        lastname:
-            column: lastname
+        country:
+            column: country
             type: string
             length: 255
             nullable: true
-        phone:
-            column: phone
-            type: string
-            length: 255
+        isPaid:
+            type: boolean
             nullable: true
-    attributeOverride:
-      emailCanonical:
-        unique: false
-        name: emailCanonical
-        column: email_canonical
-        length: 255
-        nullable: false
-        type: string

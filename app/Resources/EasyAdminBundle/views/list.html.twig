@@ -104,11 +104,6 @@
                                     		<source src="{{ asset('uploads/'~easyadmin_render_field(item, metadata))~'.mp3' }}" type="audio/mp3">
                                     		<source src="{{ asset('uploads/'~easyadmin_render_field(item, metadata))~'.ogg' }}" type="audio/ogg">
                                     	</audio>
-                                    {% elseif metadata.fieldType in ['facebook_link'] %}
-                                    	{% set facebookField = easyadmin_render_field(item, metadata) %}
-                                    	{% if facebookField != '<span class="label">NULL</span>' %}
-                                        <a href="https://www.facebook.com/{{ easyadmin_render_field(item, metadata) }}" target="_blank">Facebook Link</a>
-                                    	{% endif %}
                                     {% else %}
                                         {{ easyadmin_render_field(item, metadata) }}
                                     {% endif %}

@@ -3,6 +3,6 @@ odiseo_backend:
     resource: "@OdiseoBackendBundle/Resources/config/routing/main.yml"
     prefix:   /
 
-odiseo_elecco_dashboard:
+odiseo_elecco_backend_dashboard:
     pattern: /dashboard
     defaults: { _controller: "OdiseoEleccoBundle:Backend/Main:dashboard" }
